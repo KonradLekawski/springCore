@@ -6,20 +6,5 @@
 
     <context:annotation-config />
     <context:component-scan base-package="com.codecool.scc"/>
-    <!--<bean id="inspectService" class="InspectFileService"/>-->
-
-    <!--<bean id="fileReader" class="FileReader" />-->
-
-    <!--<bean id="formatterFactory" class="OutputFormatterFactory" />-->
-
-    <!--<bean id="csvConverter" class="SimpleCsvConverter">-->
-        <!--<constructor-arg ref="fileReader"/>-->
-        <!--<constructor-arg ref="formatterFactory"/>-->
-    <!--</bean>-->
-    <!---->
-    <!--<bean id="applicationController" class="ApplicationController">-->
-        <!--<constructor-arg ref="inspectService"/>-->
-        <!--<constructor-arg ref="csvConverter"/>-->
-    <!--</bean>-->
 
 </beans>
