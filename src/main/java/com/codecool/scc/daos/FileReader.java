@@ -1,7 +1,5 @@
 package com.codecool.scc.daos;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
