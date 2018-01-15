@@ -1,4 +1,4 @@
-package com.codecool.services;
+package com.codecool.scc.services;
 
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,6 @@ public class InspectFileService {
             String fileName = path[path.length - 1];
 
             return checkIsFileNameProper(fileName);
-
         }
         return checkIsFileNameProper(filePath);
     }

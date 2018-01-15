@@ -1,4 +1,4 @@
-package com.codecool.views;
+package com.codecool.scc.views;
 
 
 import java.util.List;
@@ -10,29 +10,14 @@ public class TableOutputFormatter implements OutputFormatter {
 
         int longestWordLen = countLongestWord(data);
 
-        printHeader(data.get(0), longestWordLen);
-        printContent(data, longestWordLen);
-
-    }
-
-    private void printHeader(String[] row, int longestWordLen) {
-
-        for (String elem : row) {
-            System.out.printf(elem + createSpaces(elem.length(),longestWordLen));
-        }
-        System.out.println();
-    }
-
-    private void printContent(List<String[]> data, int longestWordLen) {
-
-        for (int i = 1; i < data.size(); i++) {
+        for (String[] row : data) {
             System.out.println();
-            for (String elem : data.get(i)) {
+            for (String elem : row) {
                 System.out.printf(elem + createSpaces(elem.length(), longestWordLen));
             }
         }
-        System.out.println("format table");
     }
+
 
     private String createSpaces(int wordLen, int longestWordLen) {
         return new String(new char[longestWordLen - wordLen + 4]).replace('\0', ' ');

@@ -1,4 +1,4 @@
-package com.codecool.views;
+package com.codecool.scc.views;
 
 import java.util.List;
 
@@ -6,21 +6,20 @@ public class JsonOutputFormatter implements OutputFormatter {
 
     @Override
     public void printToConsole(List<String[]> data) {
-        String[] values = data.get(0);
+        int valuesLen = data.get(0).length;
 
-        for (int i = 1; i < data.size(); i++) {
+        for (String[] aData : data) {
             System.out.println("{");
-            for (int j = 0; j < values.length; j++) {
-                String value = '"' + values[j] + '"' + ": " + '"' + data.get(i)[j] + '"';
-                if(j == values.length -1) {
+            for (int j = 0; j < valuesLen; j++) {
+                String value = '"' + "value" + j + ':' + '"' + ": " + '"' + aData[j] + '"';
+                if (j == valuesLen - 1) {
                     System.out.println("    " + value);
-                }else {
+                } else {
                     System.out.println("    " + value + ",");
                 }
             }
             System.out.println("}");
         }
-        System.out.println("json");
     }
 
 }

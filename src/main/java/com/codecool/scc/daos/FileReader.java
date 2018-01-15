@@ -1,4 +1,4 @@
-package com.codecool.daos;
+package com.codecool.scc.daos;
 
 import org.springframework.stereotype.Component;
 

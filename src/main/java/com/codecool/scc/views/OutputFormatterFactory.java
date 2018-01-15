@@ -1,11 +1,12 @@
-package com.codecool.views;
+package com.codecool.scc.views;
 
+import com.codecool.scc.exeptions.WrongTypeException;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OutputFormatterFactory {
 
-    public OutputFormatter createByFormat(String outputFormat) {
+    public OutputFormatter createByFormat(String outputFormat) throws WrongTypeException  {
 
         switch (FormatType.valueOf(outputFormat)) {
 
@@ -17,7 +18,9 @@ public class OutputFormatterFactory {
 
             case table:
                 return new TableOutputFormatter();
+
+            default:
+                throw new WrongTypeException("Wrong type");
         }
-        return null;
     }
 }

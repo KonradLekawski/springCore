@@ -5,19 +5,19 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:annotation-config />
-    <context:component-scan base-package="com.codecool"/>
-    <!--<bean id="inspectService" class="com.codecool.services.InspectFileService"/>-->
+    <context:component-scan base-package="com.codecool.scc"/>
+    <!--<bean id="inspectService" class="InspectFileService"/>-->
 
-    <!--<bean id="fileReader" class="com.codecool.daos.FileReader" />-->
+    <!--<bean id="fileReader" class="FileReader" />-->
 
-    <!--<bean id="formatterFactory" class="com.codecool.views.OutputFormatterFactory" />-->
+    <!--<bean id="formatterFactory" class="OutputFormatterFactory" />-->
 
-    <!--<bean id="csvConverter" class="com.codecool.services.SimpleCsvConverter">-->
+    <!--<bean id="csvConverter" class="SimpleCsvConverter">-->
         <!--<constructor-arg ref="fileReader"/>-->
         <!--<constructor-arg ref="formatterFactory"/>-->
     <!--</bean>-->
     <!---->
-    <!--<bean id="applicationController" class="com.codecool.controllers.ApplicationController">-->
+    <!--<bean id="applicationController" class="ApplicationController">-->
         <!--<constructor-arg ref="inspectService"/>-->
         <!--<constructor-arg ref="csvConverter"/>-->
     <!--</bean>-->

@@ -1,4 +1,4 @@
-package com.codecool.views;
+package com.codecool.scc.views;
 
 import java.util.List;
 
