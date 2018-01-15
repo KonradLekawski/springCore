@@ -6,6 +6,7 @@ import com.codecool.scc.exeptions.NotCsvException;
 import com.codecool.scc.exeptions.WrongTypeException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 
@@ -24,7 +25,7 @@ public class ConverterApplication {
             System.out.println("Wrong type choosen");
         } catch (NotCsvException e) {
             System.out.println("File should be in CSV format");
-        } catch (NoSuchFileException e) {
+        } catch (FileNotFoundException e) {
             System.out.println("File not found");
         } catch (IOException e) {
             e.printStackTrace();
