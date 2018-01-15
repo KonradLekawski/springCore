@@ -6,6 +6,8 @@ import com.codecool.scc.views.OutputFormatterFactory;
 import com.codecool.scc.daos.FileReader;
 import com.codecool.scc.views.OutputFormatter;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
 import java.util.List;
 
 @Component
@@ -21,7 +23,7 @@ public class SimpleCsvConverter {
         this.fileService = fileService;
     }
 
-    public void convert(String file, String outputFormat) throws WrongTypeException, NotCsvException {
+    public void convert(String file, String outputFormat) throws WrongTypeException, NotCsvException, IOException {
 
         if (fileService.checkIsCsvFormat(file)) {
             List<String[]> data = fileReader.readData(file);
@@ -31,7 +33,7 @@ public class SimpleCsvConverter {
             throw new NotCsvException("file is not in CSV format");
         }
     }
-    public void convert(String  file) throws WrongTypeException, NotCsvException {
+    public void convert(String  file) throws WrongTypeException, NotCsvException, IOException {
 
         if (fileService.checkIsCsvFormat(file)) {
             OutputFormatter formatter = this.factory.createByFormat("table");

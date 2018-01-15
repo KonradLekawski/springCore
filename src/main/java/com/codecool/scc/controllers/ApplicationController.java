@@ -6,6 +6,8 @@ import com.codecool.scc.exeptions.WrongTypeException;
 import com.codecool.scc.services.SimpleCsvConverter;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
+
 @Component()
 public class ApplicationController {
     private SimpleCsvConverter csvConverter;
@@ -15,7 +17,7 @@ public class ApplicationController {
         this.csvConverter = csvConverter;
     }
 
-    public void start(String[] args) throws WrongTypeException, NotCsvException, ArgsLenException {
+    public void start(String[] args) throws WrongTypeException, NotCsvException, ArgsLenException, IOException {
 
         String file;
 

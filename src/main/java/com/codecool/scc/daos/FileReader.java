@@ -1,5 +1,7 @@
 package com.codecool.scc.daos;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -13,7 +15,7 @@ import java.util.stream.Stream;
 @Component
 public class FileReader {
 
-    public List<String[]> readData(String file) {
+    public List<String[]> readData(String file) throws IOException {
         List<String[]> table = new ArrayList<>();
 
         String fileContent = readLineByLine(file);
@@ -27,19 +29,15 @@ public class FileReader {
         return table;
     }
 
-    private String readLineByLine(String file) {
+    private String readLineByLine(String file) throws IOException {
         StringBuilder fileContent = new StringBuilder();
 
-        try (Stream<String> stream = Files.lines( Paths.get(file), StandardCharsets.UTF_8))
-        {
-            stream.forEach(s -> fileContent.append(s).append("\n"));
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        Stream<String> stream = Files.lines( Paths.get(file), StandardCharsets.UTF_8);
+
+        stream.forEach(s -> fileContent.append(s).append("\n"));
 
         return fileContent.toString();
     }
+
 }
 
